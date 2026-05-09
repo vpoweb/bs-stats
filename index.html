@@ -6,159 +6,80 @@
     <title>BS FACEIT | PRO LEAGUE</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        :root {
-            --primary: #5865F2;
-            --accent: #00f2ff;
-            --bg: #050508;
-            --glass: rgba(255, 255, 255, 0.03);
-            --border: rgba(255, 255, 255, 0.1);
-        }
+        :root { --primary: #5865F2; --accent: #00f2ff; --bg: #050508; --glass: rgba(255, 255, 255, 0.03); --border: rgba(255, 255, 255, 0.1); }
+        * { box-sizing: border-box; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        body { font-family: 'Roboto', sans-serif; background: radial-gradient(circle at top, #1a1b2e 0%, var(--bg) 100%); color: #fff; margin: 0; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; }
+        
+        /* ШАПКА */
+        .header { text-align: center; margin-bottom: 40px; }
+        .header h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(2rem, 8vw, 3.5rem); margin: 0; background: linear-gradient(to bottom, #fff 30%, var(--primary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .season-badge { display: inline-block; background: var(--primary); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; margin-top: 10px; letter-spacing: 2px; }
 
-        * { box-sizing: border-box; transition: all 0.3s ease; }
+        /* ГЛОБАЛЬНАЯ ИНФО-ПАНЕЛЬ */
+        .stats-overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; width: 100%; max-width: 1000px; margin-bottom: 40px; }
+        .stat-card { background: var(--glass); border: 1px solid var(--border); padding: 20px; border-radius: 20px; text-align: center; backdrop-filter: blur(10px); }
+        .stat-card span { display: block; font-size: 0.7rem; color: #666; text-transform: uppercase; margin-bottom: 5px; }
+        .stat-card b { font-family: 'Orbitron'; font-size: 1.5rem; color: var(--accent); }
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: radial-gradient(circle at top, #1a1b2e 0%, var(--bg) 100%);
-            color: #fff;
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
-        }
+        /* ПЕРЕКЛЮЧАТЕЛЬ */
+        .tab-container { display: flex; gap: 10px; margin-bottom: 30px; background: var(--glass); padding: 5px; border-radius: 30px; border: 1px solid var(--border); }
+        .tab-btn { padding: 10px 25px; border-radius: 25px; border: none; background: transparent; color: #666; cursor: pointer; font-weight: bold; font-family: 'Orbitron'; font-size: 0.8rem; }
+        .tab-btn.active { background: var(--primary); color: white; box-shadow: 0 0 15px rgba(88, 101, 242, 0.4); }
 
-        .header {
-            text-align: center;
-            margin-bottom: 50px;
-            animation: fadeInDown 1s ease;
-        }
+        /* ПОДИУМ */
+        .top-3 { display: flex; justify-content: center; align-items: flex-end; gap: 20px; margin-bottom: 50px; width: 100%; max-width: 900px; min-height: 250px; }
+        .card { background: var(--glass); backdrop-filter: blur(10px); border: 1px solid var(--border); border-radius: 20px; padding: 20px; text-align: center; flex: 1; cursor: pointer; position: relative; }
+        .card:hover { transform: translateY(-10px); background: rgba(255,255,255,0.07); border-color: var(--primary); }
+        .gold { border-color: #ffd700; height: 230px; transform: scale(1.08); z-index: 2; }
+        .silver { border-color: #c0c0c0; height: 190px; }
+        .bronze { border-color: #cd7f32; height: 170px; }
 
-        .header h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3.5rem;
-            margin: 0;
-            background: linear-gradient(to bottom, #fff 30%, var(--primary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 10px 20px rgba(88, 101, 242, 0.3);
-        }
-
-        .season-badge {
-            display: inline-block;
-            background: var(--primary);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            margin-top: 10px;
-            letter-spacing: 2px;
-        }
-
-        .top-3 {
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            gap: 25px;
-            margin-bottom: 60px;
-            width: 100%;
-            max-width: 900px;
-        }
-
-        .card {
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            flex: 1;
-            position: relative;
-        }
-
-        .card.gold { border-color: #ffd700; height: 220px; z-index: 2; transform: scale(1.05); }
-        .card.silver { border-color: #c0c0c0; height: 180px; }
-        .card.bronze { border-color: #cd7f32; height: 160px; }
-
-        .card .rank-icon { font-size: 2.5rem; margin-bottom: 10px; display: block; }
-        .card .nick { font-family: 'Orbitron', sans-serif; font-size: 1.2rem; display: block; }
-        .card .elo { color: var(--accent); font-weight: bold; font-size: 1.5rem; }
-
-        .search-container {
-            width: 100%;
-            max-width: 600px;
-            margin-bottom: 30px;
-        }
-
-        .search-container input {
-            width: 100%;
-            padding: 15px 25px;
-            background: var(--glass);
-            border: 1px solid var(--border);
-            border-radius: 30px;
-            color: white;
-            font-size: 1rem;
-            outline: none;
-        }
-
-        .search-container input:focus { border-color: var(--primary); box-shadow: 0 0 15px rgba(88, 101, 242, 0.4); }
-
-        .main-table-container {
-            width: 100%;
-            max-width: 1000px;
-            background: var(--glass);
-            backdrop-filter: blur(15px);
-            border-radius: 25px;
-            border: 1px solid var(--border);
-            overflow: hidden;
-        }
-
+        /* ТАБЛИЦА */
+        .main-table-container { width: 100%; max-width: 1000px; background: var(--glass); backdrop-filter: blur(15px); border-radius: 25px; border: 1px solid var(--border); overflow: hidden; }
         table { width: 100%; border-collapse: collapse; }
-        th { background: rgba(88, 101, 242, 0.1); padding: 20px; text-align: left; font-family: 'Orbitron', sans-serif; font-size: 0.7rem; color: var(--primary); }
-        td { padding: 18px 20px; border-bottom: 1px solid var(--border); font-size: 1rem; }
-        tr:hover { background: rgba(255, 255, 255, 0.05); cursor: default; }
+        th { background: rgba(88, 101, 242, 0.1); padding: 18px; text-align: left; font-family: 'Orbitron', sans-serif; font-size: 0.65rem; color: var(--primary); }
+        td { padding: 15px 20px; border-bottom: 1px solid var(--border); cursor: pointer; }
+        tr:hover td { background: rgba(255, 255, 255, 0.05); color: var(--accent); }
+        .lvl-tag { background: var(--primary); padding: 3px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; }
 
-        .lvl-tag {
-            background: linear-gradient(90deg, var(--primary), #8a94f8);
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 0.7rem;
-            font-weight: bold;
-        }
+        /* МОДАЛКА */
+        #modal { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); backdrop-filter:blur(15px); z-index:1000; justify-content:center; align-items:center; padding:20px; }
+        .modal-content { background:#16171d; border:1px solid var(--primary); width:100%; max-width:450px; border-radius:30px; padding:40px; position:relative; text-align:center; animation: scaleUp 0.3s ease; }
+        @keyframes scaleUp { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 25px; }
+        .stat-item { background: rgba(255,255,255,0.03); padding: 15px; border-radius: 15px; border: 1px solid var(--border); }
+        .stat-val { display: block; font-size: 1.2rem; font-family: 'Orbitron'; color: var(--accent); }
 
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 768px) {
-            .top-3 { flex-direction: column; align-items: center; }
-            .card { width: 100%; height: auto !important; transform: none !important; }
-        }
+        @media (max-width: 768px) { .top-3 { flex-direction: column; align-items: center; } .card { width: 100%; height: auto !important; transform: none !important; } .stats-overview { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
     <div class="header">
         <h1>PRO LEAGUE</h1>
-        <div class="season-badge">СЕЗОН 1: МАЙ</div>
+        <div class="season-badge">SEASON 1: MAY</div>
     </div>
 
-    <div class="top-3" id="podium">
-        <!-- JS вотрет данные -->
+    <div class="stats-overview">
+        <div class="stat-card"><span>Всего игроков</span><b id="total-players">0</b></div>
+        <div class="stat-card"><span>Сыграно матчей</span><b id="total-matches">0</b></div>
+        <div class="stat-card"><span>Всего киллов</span><b id="total-kills">0</b></div>
     </div>
 
-    <div class="search-container">
-        <input type="text" id="search" placeholder="Найти игрока по нику..." onkeyup="searchPlayer()">
+    <div class="tab-container">
+        <button class="tab-btn active" onclick="changeTab('elo', this)">ПО ELO</button>
+        <button class="tab-btn" onclick="changeTab('kills', this)">ПО КИЛЛАМ</button>
     </div>
+
+    <div class="top-3" id="podium"></div>
 
     <div class="main-table-container">
         <table>
             <thead>
                 <tr>
                     <th># РАНГ</th>
-                    <th>НИКНЕЙМ</th>
-                    <th>ELO</th>
+                    <th>ИГРОК</th>
+                    <th id="th-sort">ELO</th>
                     <th>LEVEL</th>
                     <th>KILLS</th>
                 </tr>
@@ -167,54 +88,93 @@
         </table>
     </div>
 
+    <div id="modal" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <h2 id="m-nick" style="font-family: 'Orbitron'; color: var(--primary); margin: 0;"></h2>
+            <p id="m-plt" style="color: #666; margin-bottom: 20px; font-size: 0.8rem;"></p>
+            <div class="stat-grid" id="m-grid"></div>
+        </div>
+    </div>
+
     <script>
-        function searchPlayer() {
-            let filter = document.getElementById('search').value.toUpperCase();
-            let rows = document.getElementById('table-body').getElementsByTagName('tr');
-            for (let row of rows) {
-                let nick = row.getElementsByTagName('td')[1].textContent.toUpperCase();
-                row.style.display = nick.indexOf(filter) > -1 ? "" : "none";
-            }
+        let rawData = {};
+        let currentSort = 'elo';
+
+        async function loadData() {
+            const res = await fetch('users.json');
+            rawData = await res.json();
+            updateDashboard();
+            renderStats();
         }
 
-        fetch('users.json')
-            .then(res => res.json())
-            .then(data => {
-                const players = Object.values(data).sort((a, b) => b.elo - a.elo);
-                
-                // Тройка лидеров
-                const podium = document.getElementById('podium');
-                const top3 = players.slice(0, 3);
-                const classes = ['gold', 'silver', 'bronze'];
-                const medals = ['🥇', '🥈', '🥉'];
+        function updateDashboard() {
+            const players = Object.values(rawData);
+            document.getElementById('total-players').innerText = players.length;
+            document.getElementById('total-matches').innerText = players.reduce((sum, p) => sum + (p.matches || 0), 0);
+            document.getElementById('total-kills').innerText = players.reduce((sum, p) => sum + (p.kills || 0), 0);
+        }
 
-                top3.forEach((p, i) => {
-                    podium.innerHTML += `
-                        <div class="card ${classes[i]}">
-                            <span class="rank-icon">${medals[i]}</span>
-                            <span class="nick">${p.nickname}</span>
-                            <span class="elo">${p.elo}</span>
-                        </div>
-                    `;
-                });
+        function changeTab(type, btn) {
+            currentSort = type;
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('th-sort').innerText = type === 'elo' ? 'ELO' : 'КИЛЛЫ';
+            renderStats();
+        }
 
-                // Таблица
-                const tbody = document.getElementById('table-body');
-                players.forEach((p, i) => {
-                    tbody.innerHTML += `
-                        <tr>
-                            <td style="color: #666; font-weight: bold;">${(i + 1).toString().padStart(2, '0')}</td>
-                            <td style="font-weight: bold;">${p.nickname}</td>
-                            <td style="color: var(--accent); font-weight: bold;">${p.elo}</td>
-                            <td><span class="lvl-tag">LVL ${Math.floor(p.elo / 100) + 1}</span></td>
-                            <td>${p.kills}</td>
-                        </tr>
-                    `;
-                });
-            })
-            .catch(() => {
-                document.querySelector('.main-table-container').innerHTML = "<div style='padding:40px; text-align:center;'>⚡ Ожидание данных... Пожалуйста, обновите страницу через минуту.</div>";
+        function renderStats() {
+            const players = Object.values(rawData).sort((a, b) => b[currentSort] - a[currentSort]);
+            const podium = document.getElementById('podium');
+            const tbody = document.getElementById('table-body');
+            
+            podium.innerHTML = '';
+            tbody.innerHTML = '';
+
+            // Топ-3
+            const classes = ['gold', 'silver', 'bronze'];
+            const medals = ['🥇', '🥈', '🥉'];
+            players.slice(0, 3).forEach((p, i) => {
+                podium.innerHTML += `
+                    <div class="card ${classes[i]}" onclick="openModal('${p.nickname}')">
+                        <span style="font-size: 2.5rem">${medals[i]}</span>
+                        <span style="display:block; font-weight:bold; margin-top:10px;">${p.nickname}</span>
+                        <span style="color:var(--accent); font-family:'Orbitron'; font-size:1.3rem;">${p[currentSort]}</span>
+                    </div>`;
             });
+
+            // Таблица
+            players.forEach((p, i) => {
+                tbody.innerHTML += `
+                    <tr onclick="openModal('${p.nickname}')">
+                        <td style="color:#444; font-weight:bold;">${(i + 1).toString().padStart(2, '0')}</td>
+                        <td style="font-weight:bold;">${p.nickname}</td>
+                        <td style="color:var(--accent); font-weight:bold;">${p[currentSort]}</td>
+                        <td><span class="lvl-tag">LVL ${Math.floor(p.elo / 100) + 1}</span></td>
+                        <td>${p.kills}</td>
+                    </tr>`;
+            });
+        }
+
+        function openModal(nick) {
+            const p = Object.values(rawData).find(x => x.nickname === nick);
+            document.getElementById('m-nick').innerText = p.nickname;
+            document.getElementById('m-plt').innerText = `${p.platform || 'PC'} | РЕГИСТРАЦИЯ: ${p.reg_date || '---'}`;
+            
+            const kd = (p.kills / Math.max(1, p.deaths)).toFixed(2);
+            const wr = p.matches > 0 ? ((p.wins / p.matches) * 100).toFixed(1) : 0;
+
+            document.getElementById('m-grid').innerHTML = `
+                <div class="stat-item"><span>Матчи</span><b class="stat-val">${p.matches}</b></div>
+                <div class="stat-item"><span>ELO</span><b class="stat-val">${p.elo}</b></div>
+                <div class="stat-item"><span>K/D</span><b class="stat-val">${kd}</b></div>
+                <div class="stat-item"><span>Winrate</span><b class="stat-val">${wr}%</b></div>
+            `;
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        function closeModal() { document.getElementById('modal').style.display = 'none'; }
+        
+        loadData();
     </script>
 </body>
 </html>
