@@ -1,0 +1,713 @@
+{
+    "7366244937": {
+        "nickname": "no emotes",
+        "lvl": 1,
+        "elo": 15,
+        "matches": 18,
+        "wins": 5,
+        "losses": 13,
+        "kills": 329,
+        "deaths": 156,
+        "platform": "PC",
+        "username": "@vpoweb",
+        "reg_date": "03.05.2026",
+        "history": [
+            {
+                "map": "Mirage",
+                "result": "Поражение",
+                "elo_change": -5,
+                "k": 20,
+                "d": 0,
+                "date": "05.05 20:54"
+            },
+            {
+                "map": "Tecaza",
+                "result": "Поражение",
+                "elo_change": 5,
+                "k": 20,
+                "d": 0,
+                "date": "05.05 20:50"
+            },
+            {
+                "map": "Mirage",
+                "result": "Поражение",
+                "elo_change": 5,
+                "k": 20,
+                "d": 0,
+                "date": "03.05 15:10"
+            },
+            {
+                "map": "Mirage",
+                "result": "Поражение",
+                "elo_change": 5,
+                "k": 20,
+                "d": 10,
+                "date": "03.05 13:20"
+            },
+            {
+                "map": "Mirage",
+                "result": "Поражение",
+                "elo_change": -20,
+                "k": 20,
+                "d": 10,
+                "date": "03.05 13:18"
+            },
+            {
+                "map": "Mirage",
+                "result": "Поражение",
+                "elo_change": -20,
+                "k": 20,
+                "d": 10,
+                "date": "03.05 13:14"
+            },
+            {
+                "map": "Dust",
+                "result": "Поражение",
+                "elo_change": -20,
+                "k": 20,
+                "d": 10,
+                "date": "03.05 13:11"
+            },
+            {
+                "map": "Mirage",
+                "result": "Поражение",
+                "elo_change": -20,
+                "k": 20,
+                "d": 15,
+                "date": "03.05 13:07"
+            },
+            {
+                "map": "Mirage",
+                "result": "Поражение",
+                "elo_change": -5,
+                "k": 15,
+                "d": 13,
+                "date": "03.05 13:03"
+            },
+            {
+                "map": "Inferno",
+                "result": "Победа",
+                "elo_change": 30,
+                "k": 20,
+                "d": 10,
+                "date": "03.05 13:00"
+            },
+            {
+                "map": "Mirage",
+                "result": "Поражение",
+                "elo_change": -5,
+                "k": 20,
+                "d": 10,
+                "date": "03.05 12:42"
+            },
+            {
+                "map": "Nauts",
+                "result": "Поражение",
+                "elo_change": -20,
+                "k": 15,
+                "d": 12,
+                "date": "03.05 12:33"
+            },
+            {
+                "map": "Dust",
+                "result": "Поражение",
+                "elo_change": -20,
+                "k": 15,
+                "d": 12,
+                "date": "03.05 12:31"
+            },
+            {
+                "map": "Inferno",
+                "result": "Победа",
+                "elo_change": 30,
+                "k": 20,
+                "d": 0,
+                "date": "03.05 12:29"
+            },
+            {
+                "map": "Mirage",
+                "result": "Победа",
+                "elo_change": 25,
+                "k": 20,
+                "d": 0,
+                "date": "03.05 12:26"
+            },
+            {
+                "map": "Inferno",
+                "result": "Победа",
+                "elo_change": 20,
+                "k": 15,
+                "d": 15,
+                "date": "03.05 12:23"
+            },
+            {
+                "map": "Mirage",
+                "result": "Поражение",
+                "elo_change": 5,
+                "k": 15,
+                "d": 14,
+                "date": "03.05 12:20"
+            },
+            {
+                "map": "Inferno",
+                "result": "Победа",
+                "elo_change": 25,
+                "k": 14,
+                "d": 15,
+                "date": "03.05 12:16"
+            }
+        ],
+        "is_banned": false,
+        "warns": 0
+    },
+    "8207794222": {
+        "nickname": "test",
+        "lvl": 1,
+        "elo": 55,
+        "matches": 18,
+        "wins": 8,
+        "losses": 10,
+        "kills": 1752,
+        "deaths": 654536608,
+        "platform": "PC",
+        "username": "@pr1nc3a",
+        "reg_date": "03.05.2026",
+        "history": [
+            {
+                "map": "Mirage",
+                "result": "Победа",
+                "elo_change": 30,
+                "k": 1488,
+                "d": 654536457,
+                "date": "05.05 20:54"
+            },
+            {
+                "map": "Tecaza",
+                "result": "Поражение",
+                "elo_change": -5,
+                "k": 19,
+                "d": 0,
+                "date": "05.05 20:50"
+            },
+            {
+                "map": "Mirage",
+                "result": "Поражение",
+                "elo_change": -5,
+                "k": 19,
+                "d": 0,
+                "date": "03.05 15:10"
+            },
+            {
+                "map": "Mirage",
+                "result": "Поражение",
+                "elo_change": -5,
+                "k": 18,
+                "d": 16,
+                "date": "03.05 13:20"
+            },
+            {
+                "map": "Mirage",
+                "result": "Поражение",
+                "elo_change": -20,
+                "k": 18,
+                "d": 19,
+                "date": "03.05 13:18"
+            },
+            {
+                "map": "Mirage",
+                "result": "Поражение",
+                "elo_change": -20,
+                "k": 14,
+                "d": 17,
+                "date": "03.05 13:14"
+            },
+            {
+                "map": "Dust",
+                "result": "Поражение",
+                "elo_change": -20,
+                "k": 15,
+                "d": 6,
+                "date": "03.05 13:11"
+            },
+            {
+                "map": "Mirage",
+                "result": "Поражение",
+                "elo_change": -20,
+                "k": 16,
+                "d": 10,
+                "date": "03.05 13:07"
+            },
+            {
+                "map": "Mirage",
+                "result": "Поражение",
+                "elo_change": -20,
+                "k": 12,
+                "d": 10,
+                "date": "03.05 13:03"
+            },
+            {
+                "map": "Inferno",
+                "result": "Победа",
+                "elo_change": 25,
+                "k": 18,
+                "d": 14,
+                "date": "03.05 13:00"
+            },
+            {
+                "map": "Mirage",
+                "result": "Победа",
+                "elo_change": 30,
+                "k": 25,
+                "d": 17,
+                "date": "03.05 12:42"
+            },
+            {
+                "map": "Nauts",
+                "result": "Поражение",
+                "elo_change": -20,
+                "k": 12,
+                "d": 10,
+                "date": "03.05 12:33"
+            },
+            {
+                "map": "Dust",
+                "result": "Победа",
+                "elo_change": 30,
+                "k": 20,
+                "d": 15,
+                "date": "03.05 12:31"
+            },
+            {
+                "map": "Inferno",
+                "result": "Победа",
+                "elo_change": 25,
+                "k": 20,
+                "d": 1,
+                "date": "03.05 12:29"
+            },
+            {
+                "map": "Mirage",
+                "result": "Победа",
+                "elo_change": 20,
+                "k": 20,
+                "d": 1,
+                "date": "03.05 12:26"
+            },
+            {
+                "map": "Inferno",
+                "result": "Поражение",
+                "elo_change": -20,
+                "k": 2,
+                "d": 0,
+                "date": "03.05 12:23"
+            },
+            {
+                "map": "Mirage",
+                "result": "Победа",
+                "elo_change": 20,
+                "k": 2,
+                "d": 1,
+                "date": "03.05 12:20"
+            },
+            {
+                "map": "Inferno",
+                "result": "Победа",
+                "elo_change": 30,
+                "k": 14,
+                "d": 14,
+                "date": "03.05 12:16"
+            }
+        ],
+        "is_banned": false,
+        "warns": 0
+    },
+    "8238456864": {
+        "nickname": "test2",
+        "lvl": 3,
+        "elo": 255,
+        "matches": 16,
+        "wins": 11,
+        "losses": 5,
+        "kills": 328,
+        "deaths": 153,
+        "platform": "PC",
+        "username": "@Vilondsay",
+        "reg_date": "03.05.2026",
+        "history": [
+            {
+                "map": "Mirage",
+                "result": "Победа",
+                "elo_change": 30,
+                "k": 25,
+                "d": 0,
+                "date": "03.05 15:10"
+            },
+            {
+                "map": "Mirage",
+                "result": "Победа",
+                "elo_change": 30,
+                "k": 42,
+                "d": 17,
+                "date": "03.05 13:20"
+            },
+            {
+                "map": "Mirage",
+                "result": "Победа",
+                "elo_change": 30,
+                "k": 41,
+                "d": 14,
+                "date": "03.05 13:18"
+            },
+            {
+                "map": "Mirage",
+                "result": "Победа",
+                "elo_change": 25,
+                "k": 25,
+                "d": 16,
+                "date": "03.05 13:14"
+            },
+            {
+                "map": "Dust",
+                "result": "Победа",
+                "elo_change": 30,
+                "k": 27,
+                "d": 12,
+                "date": "03.05 13:11"
+            },
+            {
+                "map": "Mirage",
+                "result": "Победа",
+                "elo_change": 30,
+                "k": 32,
+                "d": 17,
+                "date": "03.05 13:07"
+            },
+            {
+                "map": "Mirage",
+                "result": "Победа",
+                "elo_change": 30,
+                "k": 20,
+                "d": 15,
+                "date": "03.05 13:03"
+            },
+            {
+                "map": "Inferno",
+                "result": "Поражение",
+                "elo_change": -20,
+                "k": 16,
+                "d": 15,
+                "date": "03.05 13:00"
+            },
+            {
+                "map": "Mirage",
+                "result": "Победа",
+                "elo_change": 20,
+                "k": 20,
+                "d": 19,
+                "date": "03.05 12:42"
+            },
+            {
+                "map": "Nauts",
+                "result": "Победа",
+                "elo_change": 25,
+                "k": 18,
+                "d": 16,
+                "date": "03.05 12:33"
+            },
+            {
+                "map": "Dust",
+                "result": "Победа",
+                "elo_change": 25,
+                "k": 19,
+                "d": 12,
+                "date": "03.05 12:31"
+            },
+            {
+                "map": "Inferno",
+                "result": "Поражение",
+                "elo_change": -20,
+                "k": 1,
+                "d": 0,
+                "date": "03.05 12:29"
+            },
+            {
+                "map": "Mirage",
+                "result": "Поражение",
+                "elo_change": -20,
+                "k": 0,
+                "d": 0,
+                "date": "03.05 12:26"
+            },
+            {
+                "map": "Inferno",
+                "result": "Поражение",
+                "elo_change": 5,
+                "k": 40,
+                "d": 0,
+                "date": "03.05 12:23"
+            },
+            {
+                "map": "Mirage",
+                "result": "Победа",
+                "elo_change": 20,
+                "k": 2,
+                "d": 0,
+                "date": "03.05 12:20"
+            },
+            {
+                "map": "Inferno",
+                "result": "Поражение",
+                "elo_change": -20,
+                "k": 0,
+                "d": 0,
+                "date": "03.05 12:16"
+            }
+        ],
+        "is_banned": false,
+        "warns": 0
+    },
+    "1405136569": {
+        "nickname": "Monako",
+        "lvl": 1,
+        "elo": 35,
+        "matches": 9,
+        "wins": 3,
+        "losses": 6,
+        "kills": 3562,
+        "deaths": 71,
+        "platform": "Phone",
+        "username": "@Ssrsgg",
+        "reg_date": "03.05.2026",
+        "history": [
+            {
+                "map": "Mirage",
+                "result": "Победа",
+                "elo_change": 25,
+                "k": 24,
+                "d": 0,
+                "date": "03.05 15:10"
+            },
+            {
+                "map": "Mirage",
+                "result": "Поражение",
+                "elo_change": -20,
+                "k": 18,
+                "d": 12,
+                "date": "03.05 12:42"
+            },
+            {
+                "map": "Nauts",
+                "result": "Победа",
+                "elo_change": 30,
+                "k": 20,
+                "d": 17,
+                "date": "03.05 12:33"
+            },
+            {
+                "map": "Dust",
+                "result": "Поражение",
+                "elo_change": -20,
+                "k": 14,
+                "d": 13,
+                "date": "03.05 12:31"
+            },
+            {
+                "map": "Inferno",
+                "result": "Поражение",
+                "elo_change": -20,
+                "k": 0,
+                "d": 0,
+                "date": "03.05 12:29"
+            },
+            {
+                "map": "Mirage",
+                "result": "Поражение",
+                "elo_change": 5,
+                "k": 3455,
+                "d": 0,
+                "date": "03.05 12:26"
+            },
+            {
+                "map": "Inferno",
+                "result": "Победа",
+                "elo_change": 25,
+                "k": 15,
+                "d": 14,
+                "date": "03.05 12:23"
+            },
+            {
+                "map": "Mirage",
+                "result": "Поражение",
+                "elo_change": -5,
+                "k": 15,
+                "d": 15,
+                "date": "03.05 12:20"
+            },
+            {
+                "map": "Inferno",
+                "result": "Поражение",
+                "elo_change": -20,
+                "k": 1,
+                "d": 0,
+                "date": "03.05 12:16"
+            }
+        ],
+        "is_banned": false,
+        "warns": 0
+    },
+    "8523910361": {
+        "nickname": "test3",
+        "lvl": 2,
+        "elo": 150,
+        "matches": 7,
+        "wins": 6,
+        "losses": 1,
+        "kills": 188,
+        "deaths": 91,
+        "platform": "PC",
+        "username": "@Exelionz",
+        "reg_date": "03.05.2026",
+        "history": [
+            {
+                "map": "Mirage",
+                "result": "Победа",
+                "elo_change": 25,
+                "k": 39,
+                "d": 5,
+                "date": "03.05 13:20"
+            },
+            {
+                "map": "Mirage",
+                "result": "Победа",
+                "elo_change": 25,
+                "k": 39,
+                "d": 15,
+                "date": "03.05 13:18"
+            },
+            {
+                "map": "Mirage",
+                "result": "Победа",
+                "elo_change": 30,
+                "k": 32,
+                "d": 9,
+                "date": "03.05 13:14"
+            },
+            {
+                "map": "Dust",
+                "result": "Победа",
+                "elo_change": 25,
+                "k": 24,
+                "d": 19,
+                "date": "03.05 13:11"
+            },
+            {
+                "map": "Mirage",
+                "result": "Победа",
+                "elo_change": 25,
+                "k": 24,
+                "d": 15,
+                "date": "03.05 13:07"
+            },
+            {
+                "map": "Mirage",
+                "result": "Победа",
+                "elo_change": 20,
+                "k": 14,
+                "d": 10,
+                "date": "03.05 13:03"
+            },
+            {
+                "map": "Inferno",
+                "result": "Поражение",
+                "elo_change": -20,
+                "k": 16,
+                "d": 18,
+                "date": "03.05 13:00"
+            }
+        ],
+        "is_banned": false,
+        "warns": 0
+    },
+    "5496174921": {
+        "nickname": "Alternat1ve",
+        "lvl": 1,
+        "elo": 55,
+        "matches": 2,
+        "wins": 2,
+        "losses": 0,
+        "kills": 31,
+        "deaths": 0,
+        "platform": "Phone",
+        "username": "@byyourhands",
+        "reg_date": "05.05.2026",
+        "history": [
+            {
+                "map": "Mirage",
+                "result": "Победа",
+                "elo_change": 25,
+                "k": 13,
+                "d": 0,
+                "date": "05.05 20:54"
+            },
+            {
+                "map": "Tecaza",
+                "result": "Победа",
+                "elo_change": 30,
+                "k": 18,
+                "d": 0,
+                "date": "05.05 20:50"
+            }
+        ],
+        "is_banned": false,
+        "warns": 0
+    },
+    "6673389316": {
+        "nickname": "shadow_ytka",
+        "lvl": 1,
+        "elo": 0,
+        "matches": 0,
+        "wins": 0,
+        "losses": 0,
+        "kills": 0,
+        "deaths": 0,
+        "platform": "Phone",
+        "username": "@shadow_ytka",
+        "reg_date": "05.05.2026",
+        "history": [],
+        "is_banned": false,
+        "warns": 0
+    },
+    "6248510186": {
+        "nickname": "N1ko'",
+        "lvl": 1,
+        "elo": 30,
+        "matches": 2,
+        "wins": 1,
+        "losses": 1,
+        "kills": 362,
+        "deaths": 345,
+        "platform": "Phone",
+        "username": "@Скрыт",
+        "reg_date": "05.05.2026",
+        "history": [
+            {
+                "map": "Mirage",
+                "result": "Поражение",
+                "elo_change": 5,
+                "k": 345,
+                "d": 345,
+                "date": "05.05 20:54"
+            },
+            {
+                "map": "Tecaza",
+                "result": "Победа",
+                "elo_change": 25,
+                "k": 17,
+                "d": 0,
+                "date": "05.05 20:50"
+            }
+        ],
+        "is_banned": false,
+        "warns": 0
+    }
+}
