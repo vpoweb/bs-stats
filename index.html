@@ -61,7 +61,55 @@
 
         .support-btn { background: var(--primary); color: white; padding: 18px 45px; border-radius: 15px; text-decoration: none; font-weight: bold; display: inline-block; box-shadow: 0 10px 20px rgba(88, 101, 242, 0.2); }
 
-        @media (max-width: 1000px) { .layout { grid-template-columns: 1fr; } .sidebar { display: none; } .podium { flex-direction: column; align-items: center; } .p-item { width: 100%; height: auto !important; } }
+        @media (max-width: 1000px) {
+    /* Меняем сетку на одну колонку */
+    .layout { 
+        grid-template-columns: 1fr; 
+        padding: 20px 10px;
+    }
+
+    /* Превращаем боковое меню в горизонтальное сверху */
+    .sidebar { 
+        position: static; 
+        width: 100%; 
+        display: flex; 
+        flex-direction: row; 
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    /* Скрываем заголовок "Operations" на мобилках для экономии места */
+    .sidebar h3 { display: none; }
+
+    /* Делаем кнопки в ряд */
+    .menu-btn { 
+        width: auto; 
+        margin-bottom: 0; 
+        padding: 10px 15px;
+        font-size: 0.8rem;
+    }
+
+    /* Скрываем разделительную линию */
+    .sidebar hr { display: none; }
+
+    /* Кнопка бота тоже в ряд */
+    .bot-link-btn { 
+        width: auto; 
+        margin-top: 0; 
+        padding: 10px 15px;
+    }
+
+    .podium { 
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .p-item { width: 100%; height: auto !important; transform: none !important; }
+}
+
     </style>
 </head>
 <body>
