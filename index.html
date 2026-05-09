@@ -38,7 +38,7 @@
         .search-container input { width: 100%; padding: 18px 60px; border-radius: 25px; border: 1px solid var(--border); background: rgba(0,0,0,0.5); color: white; font-size: 1rem; outline: none; }
         .search-container i { position: absolute; left: 25px; top: 50%; transform: translateY(-50%); color: var(--primary); font-size: 1.2rem; }
 
-        /* ПЕРЕКЛЮЧАТЕЛЬ ТОПОВ */
+        
         .rank-switcher { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
         .s-btn { padding: 10px 25px; border-radius: 20px; border: 1px solid var(--border); background: var(--card); color: #666; cursor: pointer; font-family: 'Orbitron'; font-size: 0.7rem; }
         .s-btn.active { border-color: var(--accent); color: var(--accent); background: rgba(0, 242, 255, 0.05); }
@@ -154,7 +154,7 @@
     </div>
 
     <script>
-        // --- CONFIG ---
+       
         const BOT_LINK = "https://t.me/FaceitBlockStrikeBot";
         const SUPPORT_LINK = "https://t.me/vpoweb";
 
@@ -209,7 +209,7 @@
             const tbody = document.getElementById('tbody');
             podium.innerHTML = ''; tbody.innerHTML = '';
 
-            // Топ-3
+           
             sorted.slice(0, 3).forEach((p, i) => {
                 podium.innerHTML += `
                     <div class="p-item p-${i+1}">
@@ -219,7 +219,7 @@
                     </div>`;
             });
 
-            // Таблица
+           
             sorted.forEach((p, i) => {
                 tbody.innerHTML += `
                     <tr>
