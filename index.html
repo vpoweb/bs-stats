@@ -16,18 +16,16 @@
 
         .layout { display: grid; grid-template-columns: 280px 1fr; gap: 30px; max-width: 1500px; margin: 0 auto; padding: 40px 20px; }
 
-        /* САЙДБАР С КНОПКАМИ */
         .sidebar { background: rgba(10, 11, 16, 0.9); backdrop-filter: blur(20px); border-radius: 25px; border: 1px solid var(--border); padding: 25px; height: fit-content; position: sticky; top: 40px; }
         .sidebar h3 { font-family: 'Orbitron'; font-size: 0.7rem; color: var(--primary); margin-bottom: 25px; letter-spacing: 3px; text-transform: uppercase; }
         
         .menu-btn { width: 100%; padding: 14px 18px; border-radius: 15px; cursor: pointer; color: #888; font-size: 0.9rem; display: flex; align-items: center; gap: 12px; margin-bottom: 8px; border: 1px solid transparent; background: transparent; text-align: left; }
         .menu-btn:hover { background: rgba(255, 255, 255, 0.05); color: #fff; }
-        .menu-btn.active { background: var(--primary); color: white; border-color: rgba(255,255,255,0.1); box-shadow: 0 10px 20px rgba(88, 101, 242, 0.3); }
+        .menu-btn.active { background: var(--primary); color: white; box-shadow: 0 10px 20px rgba(88, 101, 242, 0.3); }
 
-        .bot-link-btn { width: 100%; padding: 14px; border-radius: 15px; background: transparent; border: 1px solid #229ED9; color: #229ED9; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px; font-weight: bold; font-size: 0.85rem; margin-top: 20px; }
+        .bot-link-btn { width: 100%; padding: 14px; border-radius: 15px; background: transparent; border: 1px solid #229ED9; color: #229ED9; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px; font-weight: bold; font-size: 0.85rem; margin-top: 20px; transition: 0.3s; }
         .bot-link-btn:hover { background: #229ED9; color: white; }
 
-        /* КОНТЕНТ */
         .main-content { display: flex; flex-direction: column; gap: 40px; }
         .tab-content { display: none; animation: slideUp 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
         .tab-content.active { display: block; }
@@ -35,11 +33,6 @@
 
         .hero { background: var(--card); backdrop-filter: blur(10px); padding: 60px; border-radius: 40px; border: 1px solid var(--border); text-align: center; border-bottom: 4px solid var(--primary); }
         .hero h1 { font-family: 'Orbitron'; font-size: clamp(2rem, 5vw, 4rem); margin: 0; letter-spacing: 5px; background: linear-gradient(to bottom, #fff, #888); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-
-        .widgets-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-        .widget { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 20px; text-align: center; backdrop-filter: blur(10px); }
-        .widget i { font-size: 1.5rem; color: var(--primary); margin-bottom: 10px; display: block; }
-        .widget b { display: block; font-family: 'Orbitron'; font-size: 1.4rem; color: #fff; margin-top: 5px; }
 
         .search-container { position: relative; }
         .search-container input { width: 100%; padding: 18px 60px; border-radius: 25px; border: 1px solid var(--border); background: rgba(0,0,0,0.5); color: white; font-size: 1rem; outline: none; }
@@ -57,8 +50,11 @@
         td { padding: 20px; border-bottom: 1px solid var(--border); }
 
         .rule-card { background: var(--card); padding: 30px; border-radius: 25px; border: 1px solid var(--border); margin-bottom: 20px; }
-        .rule-line { display: flex; gap: 15px; margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.02); padding-bottom: 8px; font-size: 0.9rem; }
+        .rule-card h4 { font-family: 'Orbitron'; color: var(--primary); margin: 0 0 20px 0; font-size: 1.1rem; }
+        .rule-line { display: flex; gap: 15px; margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.02); padding-bottom: 8px; font-size: 0.9rem; line-height: 1.5; }
         .rule-line b { color: var(--accent); min-width: 35px; }
+
+        .support-btn { background: var(--primary); color: white; padding: 18px 45px; border-radius: 15px; text-decoration: none; font-weight: bold; display: inline-block; box-shadow: 0 10px 20px rgba(88, 101, 242, 0.2); }
 
         @media (max-width: 1000px) { .layout { grid-template-columns: 1fr; } .sidebar { display: none; } .podium { flex-direction: column; align-items: center; } .p-item { width: 100%; height: auto !important; } }
     </style>
@@ -74,7 +70,7 @@
             
             <hr style="border: 0; border-top: 1px solid var(--border); margin: 25px 0;">
             
-            <a href="https://t.me" target="_blank" class="bot-link-btn">
+            <a id="sidebar-bot-btn" href="#" target="_blank" class="bot-link-btn">
                 <i class="fab fa-telegram-plane"></i> Наш бот
             </a>
         </div>
@@ -84,13 +80,8 @@
                 <h1>PRO LEAGUE</h1>
                 <div id="season-timer" style="color: var(--accent); font-family: Orbitron; margin-top: 15px;">00д 00ч 00м 00с</div>
                 <div style="margin-top: 35px;">
-                    <a href="https://t.me" target="_blank" style="background:var(--primary); color:white; padding:16px 40px; border-radius:50px; text-decoration:none; font-weight:bold; box-shadow: 0 15px 30px rgba(88, 101, 242, 0.4);">ИГРАТЬ СЕЙЧАС</a>
+                    <a id="hero-bot-btn" href="#" target="_blank" style="background:var(--primary); color:white; padding:16px 40px; border-radius:50px; text-decoration:none; font-weight:bold; box-shadow: 0 15px 30px rgba(88, 101, 242, 0.4);">ИГРАТЬ СЕЙЧАС</a>
                 </div>
-            </div>
-
-            <div class="widgets-row">
-                <div class="widget"><i class="fas fa-user-shield"></i><span>Игроков</span><b id="w-players">0</b></div>
-                <div class="widget"><i class="fas fa-bolt"></i><span>Убийств</span><b id="w-kills">0</b></div>
             </div>
 
             <div id="tab-rank" class="tab-content active">
@@ -111,29 +102,51 @@
 
             <div id="tab-rules" class="tab-content">
                 <div class="rule-card">
-                    <h4 style="font-family: Orbitron; color: var(--primary); margin-top: 0;">✅ ПРАВИЛА ФЕЙСИТА ✅</h4>
-                    <div class="rule-line"><b>1.1</b><span>Оскорбление администрации. (Мут 3 часа)</span></div>
-                    <div class="rule-line"><b>1.2</b><span>Стороннее ПО, софты, макросы — (Бан навсегда)</span></div>
-                    <div class="rule-line"><b>1.3</b><span>Порнография и т.п — (Бан на 3 суток)</span></div>
-                    <div class="rule-line"><b>1.4</b><span>Выход из матча без замены — (Бан на сутки)</span></div>
-                    <div class="rule-line"><b>1.5</b><span>Оффтоп и флуд — (Мут 1 час)</span></div>
-                    <div class="rule-line"><b>1.6</b><span>Ник в боте должен совпадать с игровым.</span></div>
-                    <div class="rule-line"><b>2.1</b><span>Любая попытка руины — (Бан от часа)</span></div>
+                    <h4>✅ ПРАВИЛА ФЕЙСИТА ✅</h4>
+                    <div class="rule-line"><b>1.1</b><span>Запрещено оскарбления в сторону администрации (мут 3 часа)</span></div>
+                    <div class="rule-line"><b>1.2</b><span>Сторонне ПО, софты, макросы и т.п что будет влиять на честную игру запрещено (бан на всегда)</span></div>
+                    <div class="rule-line"><b>1.3</b><span>Порнография и т.п запрещена (бан на 3 суток)</span></div>
+                    <div class="rule-line"><b>1.4</b><span>Нельзя выходить с матча и искать себе замену тоже (бан на сутки)</span></div>
+                    <div class="rule-line"><b>1.5</b><span>Оффтоп и т.п (мут 1 час)</span></div>
+                    <div class="rule-line"><b>1.6</b><span>Ник, ваш ник в боте должен соответствовать вашему нику в игре, в случае если на скрине вас не будет найдено вы получите отрицательную статистику и отстранение от игр на сутки</span></div>
+                    <div class="rule-line"><b>1.7</b><span>Оск. ник, ник любого вызывающего характера (бан сутки)</span></div>
+                    <div class="rule-line"><b>1.8</b><span>Неккоректный скрин в результаты (варн)</span></div>
+                    <div class="rule-line"><b>1.9</b><span>Если игра багнулась то это отмена матча.</span></div>
+                    <div class="rule-line"><b>2.0</b><span>Создавать сервер строго с указанием матч айди (бан от 1 дня)</span></div>
+                    <div class="rule-line"><b>2.1</b><span>Запрещена любая попытка руины (бан от часа)</span></div>
+                </div>
+
+                <div class="rule-card" style="border-color: var(--accent);">
+                    <h4>⭐️ НЕМНОГО О ПРОЕКТЕ ⭐️</h4>
+                    <p><b>🪖 Система эло:</b><br>Победа: МВП +30 эло, ЕВП +25 эло, остальные +20<br>Проигрыш: МВП +5, ЕВП -5, остальные -20</p>
+                    <p><b>😈 Пики:</b><br>Команды выбираются рандомно. Пикаются 2 рандомных капитана, которые отвечают за бан карт.</p>
+                    <p>⚠️ <b>Варны:</b> Если вы не подтвердили готовность в течении 3-х минут вам выдается варн. 3 варна = Бан аккаунта. Не знание правил не освобождает от ответственности.</p>
                 </div>
             </div>
 
             <div id="tab-support" class="tab-content">
-                <div class="widget" style="padding: 80px 20px;">
-                    <i class="fas fa-headset" style="font-size: 3rem; margin-bottom: 25px;"></i>
+                <div class="rule-card" style="text-align: center; padding: 60px 20px;">
+                    <i class="fas fa-headset" style="font-size: 3rem; color: var(--primary); margin-bottom: 25px;"></i>
                     <h2 style="font-family: Orbitron; margin-bottom: 20px;">ТЕХПОДДЕРЖКА</h2>
-                    <p style="color: #666; margin-bottom: 35px;">Возникли вопросы или нашли баг? Мы поможем.</p>
-                    <a href="https://t.me" target="_blank" style="background:var(--primary); color:white; padding:18px 45px; border-radius:15px; text-decoration:none; font-weight:bold; box-shadow: 0 10px 20px rgba(88, 101, 242, 0.2);">СВЯЗАТЬСЯ С АДМИНОМ</a>
+                    <p style="color: #888; margin-bottom: 35px;">Возникли вопросы или нашли баг? Напишите нам.</p>
+                    <a id="support-main-btn" href="#" target="_blank" class="support-btn">СВЯЗАТЬСЯ С АДМИНОМ</a>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
+        // --- CONFIG (МЕНЯЙ ССЫЛКИ ТУТ) ---
+        const BOT_LINK = "https://t.me/FaceitBlockStrikeBot";
+        const SUPPORT_LINK = "https://t.me/vpoweb";
+        // --------------------------------
+
+        function updateLinks() {
+            document.getElementById('sidebar-bot-btn').href = BOT_LINK;
+            document.getElementById('hero-bot-btn').href = BOT_LINK;
+            document.getElementById('support-main-btn').href = SUPPORT_LINK;
+        }
+
         let pData = [];
         function switchTab(id, el) {
             document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
@@ -151,12 +164,11 @@
             document.querySelectorAll('#tbody tr').forEach(r => r.style.display = r.innerText.toLowerCase().includes(q) ? '' : 'none');
         }
         async function init() {
+            updateLinks();
             try {
                 const res = await fetch('users.json');
                 const data = await res.json();
                 pData = Object.values(data).sort((a,b) => b.elo - a.elo);
-                document.getElementById('w-players').innerText = pData.length;
-                document.getElementById('w-kills').innerText = pData.reduce((s,p) => s + (p.kills || 0), 0);
                 render();
             } catch(e) {}
         }
