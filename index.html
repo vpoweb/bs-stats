@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BS Faceit Leaderboard</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0f1015; color: #e0e0e0; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        h1 { color: #5865F2; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; }
+        .container { width: 100%; max-width: 900px; background: #16171d; padding: 20px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th { background-color: #1c1e26; color: #5865F2; padding: 15px; font-size: 14px; text-transform: uppercase; border-bottom: 2px solid #2d2f39; }
+        td { padding: 15px; border-bottom: 1px solid #2d2f39; font-size: 16px; }
+        tr:hover { background-color: #1c1e26; }
+        .rank { font-weight: bold; color: #ffd700; width: 50px; }
+        .nick { color: #ffffff; font-weight: 500; }
+        .elo { color: #4ecca3; font-weight: bold; }
+        .lvl { background: #5865F2; color: white; padding: 3px 8px; border-radius: 5px; font-size: 12px; }
+    </style>
+</head>
+<body>
+
+    <h1>🏆 TOP PLAYERS</h1>
+
+    <div class="container">
+        <table id="leaderboard">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Никнейм</th>
+                    <th>ELO</th>
+                    <th>LVL</th>
+                    <th>Убийства</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Данные загрузятся сюда автоматически -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Загружаем файл users.json, который бот будет кидать в этот же репозиторий
+        fetch('users.json')
+            .then(response => response.json())
+            .then(data => {
+                const tbody = document.querySelector('#leaderboard tbody');
+                // Превращаем объект в массив и сортируем по ELO
+                const players = Object.values(data).sort((a, b) => b.elo - a.elo);
+
+                players.forEach((p, index) => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td class="rank">${index + 1}</td>
+                        <td class="nick">${p.nickname}</td>
+                        <td class="elo">${p.elo}</td>
+                        <td><span class="lvl">LVL ${(Math.floor(p.elo / 100) + 1)}</span></td>
+                        <td>${p.kills}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            })
+            .catch(err => {
+                document.querySelector('.container').innerHTML = "<p style='text-align:center; color:#ff4d6d;'>Данные еще не загружены. Сыграйте первый матч!</p>";
+            });
+    </script>
+</body>
+</html>
